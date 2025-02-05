@@ -9,18 +9,74 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        HStack{
+            LeftSubview(iconFlag: "modern")
+            
+            RightSubview(iconFlag: "modern")
+
+            
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
-        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.green]), startPoint: .topLeading, endPoint: .bottomTrailing))
+}
 
+struct LeftSubview: View {
+    let iconFlag:String
+    var icon:String {
+        if iconFlag == "classic" {
+            return "globe"
+        }
+        else {
+            return "globe.americas"
+        }
+        
+    }
+    
+    var body: some View {
+        VStack {
+            Image(systemName:icon)
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+                .padding()
+            Text("Hello, world!")
+                .padding()
+            Text("Who is ")
+                .padding()
+            Text("\(iconFlag)")
+                .padding()
+        }
+        .padding()
+    }
+}
+
+struct RightSubview: View {
+    let iconFlag:String
+    var icon:String {
+        if iconFlag == "classic" {
+            return "globe"
+        }
+        else {
+            return "globe.americas"
+        }
+        
+    }
+
+    var body: some View {
+        VStack {
+            Image(systemName: icon)
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+                .padding()
+            Text("Hello, world!")
+                .padding()
+            Text("Who is ")
+                .padding()
+            Text("\(iconFlag)")
+                .padding()
+        }
+        .padding()
+    }
 }
