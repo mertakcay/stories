@@ -21,4 +21,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.green]), startPoint: .topLeading, endPoint: .bottomTrailing))
+
 }
